@@ -379,8 +379,8 @@ public class BGASwipeBackLayout extends ViewGroup {
         final ViewConfiguration viewConfig = ViewConfiguration.get(context);
 
         setWillNotDraw(false);
-
-        ViewCompat.setAccessibilityDelegate(this, new AccessibilityDelegate());
+        AccessibilityDelegate newDelegate=new AccessibilityDelegate();
+        ViewCompat.setAccessibilityDelegate(this, newDelegate);
         ViewCompat.setImportantForAccessibility(this, ViewCompat.IMPORTANT_FOR_ACCESSIBILITY_YES);
 
         mDragHelper = ViewDragHelper.create(this, 0.5f, new DragHelperCallback());
